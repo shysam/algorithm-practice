@@ -8,7 +8,7 @@ public class Operation {
      * @param i
      * @param j
      */
-    public static void exch(int[] a, int i, int j) {
+    protected static void exch(int[] a, int i, int j) {
         int temp = a[i];
         a[i] = a[j];
         a[j] = temp;
@@ -21,7 +21,7 @@ public class Operation {
      * @param right
      * @return
      */
-    public static boolean less(int left, int right) {
+    protected static boolean less(int left, int right) {
         return left < right;
     }
 
@@ -32,7 +32,7 @@ public class Operation {
      * @param right
      * @return
      */
-    public static boolean greater(int left, int right) {
+    protected static boolean greater(int left, int right) {
         return right > left;
     }
 
@@ -41,7 +41,7 @@ public class Operation {
      *
      * @return
      */
-    public static boolean isSorted(int[] a) {
+    protected static boolean isSorted(int[] a) {
         for (int i = 1; i < a.length; i++) {
             if (less(a[i], a[i - 1])) {
                 return false;
@@ -53,7 +53,7 @@ public class Operation {
     /**
      * 打印全部
      */
-    public static void show(int[] a) {
+    protected static void show(int[] a) {
 
         if (!isSorted(a)) {
             try {
