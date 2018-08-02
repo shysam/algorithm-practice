@@ -31,9 +31,9 @@ public class Bubble extends Operation {
      * @param a
      */
     public static void sort(int[] a) {
-        int N = a.length;
-        for (int i = 0; i < N - 1; i++) {
-            for (int j = 0; j < N - i - 1; j++) {
+        int n = a.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
                 if (less(a[j + 1], a[j])) {
                     exch(a, j, j + 1);
                 }
@@ -47,11 +47,11 @@ public class Bubble extends Operation {
      * @param a
      */
     public static void sortOpt(int[] a) {
-        int N = a.length;
+        int n = a.length;
         boolean didSwap;
-        for (int i = 0; i < N - 1; i++) {
+        for (int i = 0; i < n - 1; i++) {
             didSwap = false;
-            for (int j = 0; j < N - i - 1; j++) {
+            for (int j = 0; j < n - i - 1; j++) {
                 if (less(a[j + 1], a[j])) {
                     exch(a, j, j + 1);
                     didSwap = true;
