@@ -1,4 +1,4 @@
-package sort.basis.common;
+package sort.basis;
 
 public class Operation {
 

@@ -1,9 +1,21 @@
-package sort.basis;
+package sort.basis.simple;
 
-import sort.basis.common.Operation;
+import sort.basis.Operation;
 
 /**
- * 冒泡排序
+ * 冒泡排序 - 稳定
+ * <p>
+ * 比较次数：(n-1)+(n-2)+...+2+1 = n(n-1)/2
+ * <p>
+ * 交换次数：
+ * (1)、最好：0次
+ * (2)、最坏：和比较次数一样 n(n-1)/2
+ * <p>
+ * 时间复杂度：
+ * (1)、一般：O(n²)
+ * (2)、最好(改进版)：O(n)
+ * <p>
+ * 空间复杂度：O(1)
  */
 public class Bubble extends Operation {
 
@@ -15,14 +27,6 @@ public class Bubble extends Operation {
 
     /**
      * 冒泡普通版
-     * <p>
-     * 比较次数：(n-1)+(n-2)+...+2+1 = n(n-1)/2
-     * <p>
-     * 交换次数：最少0次，最多和比较次数一样 n(n-1)/2
-     * <p>
-     * 时间复杂度：O(n²)
-     * <p>
-     * 空间复杂度：O(1)
      *
      * @param a
      */
@@ -39,8 +43,6 @@ public class Bubble extends Operation {
 
     /**
      * 冒泡改进版
-     * <p>
-     * 时间复杂度（最好的情况，已经排好）：O(n)
      *
      * @param a
      */

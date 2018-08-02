@@ -1,4 +1,0 @@
-package sort;
-
-class sl {
-}
