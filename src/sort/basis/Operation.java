@@ -61,12 +61,12 @@ public class Operation {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return;
         }
 
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
+
     }
 
 }
