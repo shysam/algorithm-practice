@@ -15,6 +15,14 @@ import sort.basis.Operation;
     [2,1,4,3,6,5,8,7,10,9],10,2
     返回：[1,2,3,4,5,6,7,8,9,10]
 
+
+
+
+    Result：
+    (1)、使用插入排序
+         时间复杂度：(n-1)*k
+
+    (2)、使用改的堆排：nLogk
  */
 public class P1 extends Operation {
 
@@ -38,19 +46,22 @@ public class P1 extends Operation {
      */
     private static void sort(int[] a, int n, int k) {
 
-        // 建立一个k+1的 堆
+        // 建立一个k+1的堆
+        // 时间复杂度：k
         int[] aux = new int[k];
         for (int i = 0; i < k; i++) {
             aux[i] = a[i];
         }
 
         // 有序化，i指要下沉的点
+        // 时间复杂度：k/2*logk
         for (int i = k / 2; i >= 1; i--) {
             sink(aux, i, k);
         }
 
         // 将已排序好的顶点放入原数组，取下一个数放入顶点，并做下沉操作
         // n-k是防止越界，如果循环走到倒数第三个值，那么取下一个数就是 倒数第三+3，已越界。所以排到只剩三个数就行
+        // 时间复杂度：(n-k)*logk
         for (int i = 0; i < n - k; i++) {
             a[i] = aux[0];
             aux[0] = a[i + k];
@@ -58,12 +69,15 @@ public class P1 extends Operation {
         }
 
         // 接着排剩下的K个，这K个数已经是堆有序
+        // 时间复杂度：k*logk
         for (int i = n - k; i < n; i++) {
             a[i] = aux[0];
             exch(aux, 1, k);
             k--;
             sink(aux, 1, k);
         }
+
+        // 总的时间复杂度：k + k/2*logk + (n-k)*logk + k*logk ≈ nlogk
 
     }
 
