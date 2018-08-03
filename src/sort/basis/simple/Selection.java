@@ -3,6 +3,7 @@ package sort.basis.simple;
 import sort.basis.Operation;
 
 /**
+ * Created by shysam on 2018/8/3
  * 选择排序 - 不稳定（例：55200，第一个5和第三个2交换，相对顺序发生变化）
  * <p>
  * 比较次数：

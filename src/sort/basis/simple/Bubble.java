@@ -3,6 +3,7 @@ package sort.basis.simple;
 import sort.basis.Operation;
 
 /**
+ * Created by shysam on 2018/8/3
  * 冒泡排序 - 稳定
  * <p>
  * 比较次数：(n-1)+(n-2)+...+2+1 = n(n-1)/2

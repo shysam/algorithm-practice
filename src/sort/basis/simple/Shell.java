@@ -3,6 +3,7 @@ package sort.basis.simple;
 import sort.basis.Operation;
 
 /**
+ * Created by shysam on 2018/8/3
  * 希尔排序 - 不稳定
  * <p>
  * 比较次数：未知

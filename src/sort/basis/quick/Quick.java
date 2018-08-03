@@ -3,6 +3,7 @@ package sort.basis.quick;
 import sort.basis.Operation;
 
 /**
+ * Created by shysam on 2018/8/2
  * 快速排序 - 不稳定
  */
 public class Quick extends Operation {
