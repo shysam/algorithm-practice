@@ -1,5 +1,7 @@
 package sort.basis;
 
+import java.util.Arrays;
+
 public class Operation {
 
     /**
@@ -23,6 +25,17 @@ public class Operation {
      */
     protected static boolean less(int left, int right) {
         return left < right;
+    }
+
+    /**
+     * 小于
+     *
+     * @param left
+     * @param right
+     * @return
+     */
+    protected static boolean less(int[] a, int left, int right) {
+        return a[left] < a[right];
     }
 
     /**
@@ -63,10 +76,11 @@ public class Operation {
             }
         }
 
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
-        }
+        showOnly(a);
+    }
 
+    protected static void showOnly(int[] a) {
+        System.out.println(Arrays.toString(a));
     }
 
 }

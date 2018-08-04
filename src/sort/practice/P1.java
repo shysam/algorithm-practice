@@ -110,7 +110,7 @@ public class P1 extends Operation {
      * @param j
      * @return
      */
-    private static boolean less(int[] pq, int i, int j) {
+    public static boolean less(int[] pq, int i, int j) {
         return pq[i - 1] < pq[j - 1];
     }
 
