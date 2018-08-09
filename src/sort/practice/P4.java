@@ -6,7 +6,7 @@ import sort.basis.Operation;
 
     Created by shysam on 2018/8/5
 
-    荷兰国旗问题
+    荷兰国旗问题，三色排序
 
     问题：
     有一个只由0，1，2三种元素构成的整数数组，请使用交换、原地排序而不是使用计数进行排序。
