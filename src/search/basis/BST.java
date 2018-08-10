@@ -11,6 +11,7 @@ import java.util.NoSuchElementException;
 public class BST<Key extends Comparable<Key>, Value> {
 
     public static void main(String[] args) {
+
         BST<Integer, Integer> bst = new BST<>();
         bst.put(10, 10);
         bst.put(6, 6);
@@ -26,7 +27,6 @@ public class BST<Key extends Comparable<Key>, Value> {
 
         bst.delete(6);
         System.out.println("");
-
     }
 
     private Node root;
