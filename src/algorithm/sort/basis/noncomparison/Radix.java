@@ -1,6 +1,6 @@
-package sort.basis.noncomparison;
+package algorithm.sort.basis.noncomparison;
 
-import sort.basis.Operation;
+import algorithm.sort.basis.Operation;
 
 /**
  * Created by sam on 2018/8/4

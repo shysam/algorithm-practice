@@ -1,4 +1,4 @@
-package search.basis;
+package algorithm.search.basis;
 
 import java.util.NoSuchElementException;
 
@@ -74,7 +74,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
 
     /***************************************************************************
-     *  Standard BST search.
+     *  Standard BST algorithm.search.
      ***************************************************************************/
 
     /**
@@ -515,7 +515,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     /***************************************************************************
-     *  Range count and range search.
+     *  Range count and range algorithm.search.
      ***************************************************************************/
 
     /**

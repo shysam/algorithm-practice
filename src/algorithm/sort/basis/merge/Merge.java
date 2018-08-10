@@ -1,6 +1,6 @@
-package sort.basis.merge;
+package algorithm.sort.basis.merge;
 
-import sort.basis.Operation;
+import algorithm.sort.basis.Operation;
 
 /**
  * Created by shysam on 2018/8/2

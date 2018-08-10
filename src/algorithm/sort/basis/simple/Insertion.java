@@ -1,6 +1,6 @@
-package sort.basis.simple;
+package algorithm.sort.basis.simple;
 
-import sort.basis.Operation;
+import algorithm.sort.basis.Operation;
 
 /**
  * Created by shysam on 2018/8/3

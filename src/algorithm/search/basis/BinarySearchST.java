@@ -4,7 +4,7 @@
  *  Dependencies: StdIn.java StdOut.java
  *  Data files:   https://algs4.cs.princeton.edu/31elementary/tinyST.txt  
  *
- *  Symbol table implementation with binary search in an ordered array.
+ *  Symbol table implementation with binary algorithm.search in an ordered array.
  *
  *  % more tinyST.txt
  *  S E A R C H E X A M P L E
@@ -23,7 +23,7 @@
  *
  ******************************************************************************/
 
-package search.basis;
+package algorithm.search.basis;
 
 import java.util.NoSuchElementException;
 

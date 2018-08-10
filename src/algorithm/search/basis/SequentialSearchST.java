@@ -4,7 +4,7 @@
  *  Dependencies: StdIn.java StdOut.java
  *  Data files:   https://algs4.cs.princeton.edu/31elementary/tinyST.txt  
  *
- *  Symbol table implementation with sequential search in an
+ *  Symbol table implementation with sequential algorithm.search in an
  *  unordered linked list of key-value pairs.
  *
  *  % more tinyST.txt
@@ -24,7 +24,7 @@
  *
  ******************************************************************************/
 
-package search.basis;
+package algorithm.search.basis;
 
 /**
  * Created by Sam on 2018/8/10

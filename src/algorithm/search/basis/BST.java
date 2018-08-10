@@ -1,4 +1,4 @@
-package search.basis;
+package algorithm.search.basis;
 
 import java.util.NoSuchElementException;
 

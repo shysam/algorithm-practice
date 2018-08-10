@@ -1,6 +1,6 @@
-package sort.basis.simple;
+package algorithm.sort.basis.simple;
 
-import sort.basis.Operation;
+import algorithm.sort.basis.Operation;
 
 /**
  * Created by shysam on 2018/8/3
@@ -37,7 +37,7 @@ public class Shell extends Operation {
         }
 
         while (h >= 1) {
-            // h-sort the array
+            // h-algorithm.sort the array
             for (int i = h; i < n; i++) {
                 for (int j = i; j >= h && less(a[j], a[j - h]); j -= h) {
                     exch(a, j, j - h);

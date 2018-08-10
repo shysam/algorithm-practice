@@ -1,6 +1,6 @@
-package sort.practice;
+package algorithm.sort.practice;
 
-import sort.basis.Operation;
+import algorithm.sort.basis.Operation;
 
 /*
 

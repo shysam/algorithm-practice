@@ -1,6 +1,6 @@
-package sort.basis.noncomparison;
+package algorithm.sort.basis.noncomparison;
 
-import sort.basis.Operation;
+import algorithm.sort.basis.Operation;
 
 /**
  * 计数排序 - 稳定，线性时间
