@@ -1,48 +1,67 @@
-package datastructure.linkedlist;
+package datastructure.linkedlist.practice;
 
 /*
 
-    环形链表插值练习
+    环形链表（LeetCode-141、https://leetcode-cn.com/problems/linked-list-cycle/solution/）
 
     问题：
-    有一个整数value，如何在节点值有序的环形链表中插入一个节点值为value的节点，并且保证这个环形单链表依然有序。
-    给定链表的信息，及元素的值a及对应的next指向的元素编号同时给定value，请构造出这个环形链表，并插入该值。
-    测试样例：
+    给定一个链表，判断链表中是否有环。
 
-    [1,3,4,5,7],[1,2,3,4,0],2
-
-    返回：{1,2,3,4,5,7}
+    进阶：
+    你能否不使用额外空间解决此题？
 
  */
 public class P1 {
 
-    public static void main(String[] args) {
-        int[] a = {1, 3, 4, 5, 7};
-        int[] next = {1, 2, 3, 4, 0};
-        int value = 2;
-//        insert(a, next, value);
-    }
-
 //    /**
-//     * 先构造环形链表，再插入
+//     * 方法1：哈希表
 //     *
-//     * @param a
-//     * @param next
-//     * @param value
+//     * @param head
 //     * @return
 //     */
-//    public static ListNode insert(int[] a, int[] next, int value) {
-//
+//    public boolean hasCycle(ListNode head) {
+//        Set<ListNode> nodesSeen = new HashSet<>();
+//        while (head != null) {
+//            if (nodesSeen.contains(head)) {
+//                return true;
+//            } else {
+//                nodesSeen.add(head);
+//            }
+//            head = head.next;
+//        }
+//        return false;
 //    }
+
+    /**
+     * 方法二：双指针
+     *
+     * @param head
+     * @return
+     */
+    public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
 
     class ListNode {
 
-        int value;
-
+        int val;
         ListNode next;
 
-        public ListNode(int value) {
-            this.value = value;
+        ListNode(int x) {
+            val = x;
+            next = null;
         }
     }
 
