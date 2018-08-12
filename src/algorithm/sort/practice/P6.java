@@ -2,7 +2,6 @@ package algorithm.sort.practice;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 
 import algorithm.sort.basis.Operation;
@@ -46,51 +45,93 @@ public class P6 extends Operation {
     }
 
     /**
-     * 自己的代码
+     * 30ms答案
      *
      * @param intervals
      * @return
      */
     public static List<Interval> merge(List<Interval> intervals) {
+        // sort intervals by using self-defined Comparator
 
-        List<Interval> results = new ArrayList<>();
+        if (intervals == null || intervals.size() <= 1) {
+            return intervals;
+        }
 
         intervals.sort(new Comparator<Interval>() {
             @Override
-            public int compare(Interval o1, Interval o2) {
-                if (o1.start < o2.start) {
-                    return -1;
-                } else if (o1.start == o2.start) {
-                    return 0;
-                } else {
-                    return 1;
-                }
+            public int compare(Interval i1, Interval i2) {
+                return i1.start - i2.start;
             }
         });
 
-        while (intervals.size() > 0) {
-            Iterator<Interval> iterator = intervals.iterator();
-            Interval first = intervals.get(0);
-            while (iterator.hasNext()) {
-                Interval next = iterator.next();
-                if (first == next) {
-                    iterator.remove();
-                    continue;
-                }
-                if (next.start <= first.end) {
-                    if (next.end > first.end) {
-                        first.end = next.end;
-                    }
-                    iterator.remove();
-                } else {
-                    break;
-                }
+        ArrayList<Interval> result = new ArrayList<Interval>();
+
+        Interval prev = intervals.get(0);
+        for (int i = 1; i < intervals.size(); i++) {
+            Interval curr = intervals.get(i);
+
+            if (prev.end >= curr.start) {
+                // merged case
+                Interval merged = new Interval(prev.start, Math.max(prev.end, curr.end));
+                prev = merged;
+            } else {
+                result.add(prev);
+                prev = curr;
             }
-            results.add(first);
         }
 
-        return results;
+        result.add(prev);
+
+        return result;
+
     }
+
+//    /**
+//     * 自己的代码
+//     *
+//     * @param intervals
+//     * @return
+//     */
+//    public static List<Interval> merge(List<Interval> intervals) {
+//
+//        List<Interval> results = new ArrayList<>();
+//
+//        intervals.sort(new Comparator<Interval>() {
+//            @Override
+//            public int compare(Interval o1, Interval o2) {
+//                if (o1.start < o2.start) {
+//                    return -1;
+//                } else if (o1.start == o2.start) {
+//                    return 0;
+//                } else {
+//                    return 1;
+//                }
+//            }
+//        });
+//
+//        while (intervals.size() > 0) {
+//            Iterator<Interval> iterator = intervals.iterator();
+//            Interval first = intervals.get(0);
+//            while (iterator.hasNext()) {
+//                Interval next = iterator.next();
+//                if (first == next) {
+//                    iterator.remove();
+//                    continue;
+//                }
+//                if (next.start <= first.end) {
+//                    if (next.end > first.end) {
+//                        first.end = next.end;
+//                    }
+//                    iterator.remove();
+//                } else {
+//                    break;
+//                }
+//            }
+//            results.add(first);
+//        }
+//
+//        return results;
+//    }
 
     static class Interval {
 
