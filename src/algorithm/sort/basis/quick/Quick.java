@@ -3,8 +3,12 @@ package algorithm.sort.basis.quick;
 import algorithm.sort.basis.Operation;
 
 /**
- * Created by shysam on 2018/8/2
+ * Created by shysam on 20q18/8/2
  * 快速排序 - 不稳定
+ * 时间复杂度：
+ * (1)、最好：nlogn
+ * (2)、最坏：n(n-1)/2
+ * (3)、平均：nlogn
  */
 public class Quick extends Operation {
 
