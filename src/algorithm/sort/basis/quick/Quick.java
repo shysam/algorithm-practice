@@ -9,7 +9,11 @@ import algorithm.sort.basis.Operation;
 public class Quick extends Operation {
 
     public static void main(String[] args) {
-        int[] a = new int[]{23, 42, 12, 65, 7, 34, 98, 5, 34, 23, 657, 78, 34, 56};
+//        int[] a = new int[]{23, 42, 12, 65, 7, 34, 98, 5, 34, 23, 657, 78, 34, 56};
+//        int[] a = {10, 1, 2, 3, 4, 5}; // 触发 i == hi
+//        int[] a = {10, 11, 12, 13, 14, 15}; // 触发 j == lo
+//        int[] a = {10, 1, 2, 3, 10, 15, 16, 17}; // i和j相等
+        int[] a = {};
         sort(a);
         show(a);
     }
@@ -43,16 +47,29 @@ public class Quick extends Operation {
 
             // find item on lo to swap
             while (less(a[++i], v)) {
-                if (i == hi) break;
+                if (i == hi) {
+                    break;
+                }
             }
 
             // find item on hi to swap
             while (less(v, a[--j])) {
-                if (j == lo) break;      // redundant since a[lo] acts as sentinel
+                if (j == lo) {
+                    break;
+                }      // redundant since a[lo] acts as sentinel
             }
 
-            // check if pointers cross
-            if (i >= j) break;
+            // i==j 情况如下
+            // 1.数组为顺序或逆序
+            // 2.刚好i和j前进一步到汇合
+
+            // i>j 情况如下
+            // j的右边 j>=v
+            // 由i<=v得到 j<=v
+            // j的右边 j>=v ，j的左边 j<=v。结论是 j可以作为切分点
+            if (i >= j) {
+                break;
+            }
 
             exch(a, i, j);
         }
